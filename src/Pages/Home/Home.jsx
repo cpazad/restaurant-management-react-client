@@ -1,8 +1,15 @@
+import Subscribe from "../../components/Subscribe"
+import Banner from "./Banner"
+import OurBurger from "./OurBurger"
 
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Banner></Banner>
+      <OurBurger></OurBurger>
+      <Subscribe></Subscribe>
+    </div>
   )
 }
 
