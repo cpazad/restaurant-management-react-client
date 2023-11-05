@@ -4,12 +4,14 @@ import Footer from "../Pages/Shared/Footer/Footer"
 import Navbar from "../Pages/Shared/Navbar/Navbar"
 import Topbar from "../Pages/Shared/Header/Topbar"
 import Scrollbar from "../Pages/Shared/Header/Scrollbar"
+import { Toaster } from "react-hot-toast"
 
 
 const Root = () => {
   return (
     <div className="root-container bg-[#1c2124]">
         <Scrollbar></Scrollbar>
+        <Toaster></Toaster>
         <Topbar></Topbar>
         <Navbar></Navbar>
         <Outlet></Outlet>

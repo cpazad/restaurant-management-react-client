@@ -1,8 +1,12 @@
 # Restaurant Management Website for Grand Restaurant
+assignment_category_0005
+Project Live link
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 5 main Features of this project
+    1. Used Firebase for User Authentication
+    2. Used MongoDB to store and fetch data
+    3. Use Axios to handle Data
+    4. Huse TanStack to handle all the query
+    5. 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
