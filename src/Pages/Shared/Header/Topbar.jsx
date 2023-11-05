@@ -4,8 +4,8 @@ const Topbar = () => {
   return (
     <div className="flex justify-between px-10 py-2 bg-myred text-white">
       <div className="flex gap-4">
-        <span className="flex items-center gap-2"><FaLocationDot></FaLocationDot> 22, Royal Street,New York </span>
         <span className="flex items-center gap-2"><FaPhone></FaPhone> +66455125 </span>
+        <span className="flex items-center gap-2"><FaLocationDot></FaLocationDot> 22, Royal Street,New York </span>
       </div>
       <div>
         <div className="grid grid-flow-col gap-4 text-white">

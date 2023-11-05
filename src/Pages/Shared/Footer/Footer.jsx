@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="flex flex-col  gap-4 justify-center items-center">
             <img src="/restaurant-64.png" alt="" />
             <p>
-             Grand Restaurant
+             <span className="text-xl text-mybrown font-bold uppercase">Grand Restaurant</span>
               <br />
               Providing delicious food since 1995
             </p>
@@ -42,6 +42,7 @@ const Footer = () => {
         <aside className="items-center grid-flow-col text-white">
           <p>Copyright © 2023 - All right reserved by FreedomByte Digital </p>
         </aside>
+        {/* Social Links */}
         <nav className="md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-4 text-white">
             {/* Twitter */}
