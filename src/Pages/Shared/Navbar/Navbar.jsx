@@ -3,23 +3,23 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const navlinks = (
     <>
-      <li>
-        <NavLink to="/"> Home </NavLink>
+      <li >
+        <NavLink className="hover:text-mybrown text-lg " to="/"> Home </NavLink>
       </li>
       <li>
-        <NavLink to="/about"> About Us </NavLink>
+        <NavLink className="hover:text-mybrown text-lg " to="/about"> About Us </NavLink>
       </li>
       <li>
-        <NavLink to="/menu"> Menu </NavLink>
+        <NavLink className="hover:text-mybrown text-lg " to="/menu"> Menu </NavLink>
       </li>
       <li>
-        <NavLink to="/gallery"> Gallery </NavLink>
+        <NavLink className="hover:text-mybrown text-lg " to="/gallery"> Gallery </NavLink>
       </li>
       <li>
-        <NavLink to="/blogs"> Blogs </NavLink>
+        <NavLink className="hover:text-mybrown text-lg " to="/blogs"> Blogs </NavLink>
       </li>
       <li>
-        <NavLink to="/contact"> Find Us </NavLink>
+        <NavLink className="hover:text-mybrown text-lg " to="/contact"> Find Us </NavLink>
       </li>
    
     </>
@@ -61,7 +61,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn"> Log In </a>
+        <a className="btn btn-sm btn-outline rounded-sm hover:bg-mybrown hover:text-black text-mybrown"> Log In </a>
       </div>
     </div>
   );
