@@ -5,11 +5,15 @@ import Navbar from "../Pages/Shared/Navbar/Navbar"
 import Topbar from "../Pages/Shared/Header/Topbar"
 import Scrollbar from "../Pages/Shared/Header/Scrollbar"
 import { Toaster } from "react-hot-toast"
+import { Helmet } from "react-helmet-async"
 
 
 const Root = () => {
   return (
     <div className="root-container bg-[#1c2124]">
+      <Helmet>
+        <title> Grand Restaurant </title>
+      </Helmet>
         <Scrollbar></Scrollbar>
         <Toaster></Toaster>
         <Topbar></Topbar>

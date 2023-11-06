@@ -1,9 +1,14 @@
-
+import { Helmet } from "react-helmet-async";
 
 const Blogs = () => {
   return (
-    <div>Blogs</div>
-  )
-}
+    <div>
+      <Helmet>
+        <title> Grand Restaurant | Blogs </title>
+      </Helmet>
+      Blogs
+    </div>
+  );
+};
 
-export default Blogs
+export default Blogs;

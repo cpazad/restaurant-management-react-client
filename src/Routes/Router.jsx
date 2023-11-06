@@ -45,7 +45,7 @@ const router = createBrowserRouter([
             element:<FindUs></FindUs>
         },
         {
-            path:"login",
+            path:"/login",
             element:<LogIn></LogIn>
         },
         {

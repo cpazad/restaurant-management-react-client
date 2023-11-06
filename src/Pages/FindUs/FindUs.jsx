@@ -1,9 +1,14 @@
-
+import { Helmet } from "react-helmet-async";
 
 const FindUs = () => {
   return (
-    <div>FindUs</div>
-  )
-}
+    <div>
+      <Helmet>
+        <title>Grand Restaurant | Find Us</title>
+      </Helmet>
+      FindUs
+    </div>
+  );
+};
 
-export default FindUs
+export default FindUs;

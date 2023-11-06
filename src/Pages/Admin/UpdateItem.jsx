@@ -1,8 +1,13 @@
-import React from 'react'
+
+import { Helmet } from 'react-helmet-async'
 
 const UpdateItem = () => {
   return (
-    <div>UpdateItem</div>
+    <div>
+      <Helmet>
+        <title>Grand Restaurant | Update Item </title>
+      </Helmet>
+      UpdateItem</div>
   )
 }
 
