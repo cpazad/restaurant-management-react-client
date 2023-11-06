@@ -5,21 +5,20 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
- const { users, logOut } = useContext(AuthContext)
- const navigate = useNavigate()
- 
+  const { users, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
 
- const handleSignOut = () =>{
-  logOut().then(()=>{
-    toast.success("Logged Out Successfully")
-    navigate("/")
-  }).catch((error)=>{
-    toast.error("Something Wrong", error)
-  })
- }
- 
- 
- 
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        toast.success("Logged Out Successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error("Something Wrong", error);
+      });
+  };
+
   const navlinks = (
     <>
       <li>
@@ -100,39 +99,46 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 text-white ">{navlinks}</ul>
       </div>
       <div className="navbar-end">
-      {users && (
-            <>
-              <div className="flex justify-center items-center">
-                <p className="text-stone-50 text-sm ">Welcome! {users.displayName}</p>
+        {users && (
+          <>
+            <div className="flex justify-center items-center">
+              <p className="text-stone-50 text-sm ">
+                Welcome! {users.displayName}
+              </p>
+              <Link to="/profile">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  <div className="w-10 rounded-full">
+                  <div title="click to view profile" className="w-10 rounded-full">
                     <img src={users.photoURL} alt={users.displayName} />
                   </div>
                 </label>
-              </div>
-
-              <Link to="/mycart">
-                <a className="btn btn-sm btn-outline border-white text-white rounded-sm mr-2">
-                  {" "}
-                  <FaCartArrowDown></FaCartArrowDown>{" "}
-                </a>
               </Link>
-            </>
-          )}
-        {users ? ( 
-          
-          <button onClick={handleSignOut} className="btn btn-sm btn-outline rounded-sm hover:bg-mybrown hover:text-black text-mybrown">
+            </div>
+
+            <Link to="/mycart">
+              <a className="btn btn-sm btn-outline border-white text-white rounded-sm mr-2">
+                {" "}
+                <FaCartArrowDown></FaCartArrowDown>{" "}
+              </a>
+            </Link>
+          </>
+        )}
+        {users ? (
+          <button
+            onClick={handleSignOut}
+            className="btn btn-sm btn-outline rounded-sm hover:bg-mybrown hover:text-black text-mybrown"
+          >
             {" "}
-            Log Out {" "}
+            Log Out{" "}
           </button>
-        ) : ( <Link to="/login">
-          {" "}
-          <button className="btn btn-sm btn-outline rounded-sm hover:bg-mybrown hover:text-black text-mybrown">
+        ) : (
+          <Link to="/login">
             {" "}
-            Log In{" "}
-          </button>
-        </Link>) }
-       
+            <button className="btn btn-sm btn-outline rounded-sm hover:bg-mybrown hover:text-black text-mybrown">
+              {" "}
+              Log In{" "}
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

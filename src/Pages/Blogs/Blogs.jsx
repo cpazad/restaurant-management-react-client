@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import Accordions from "../../components/Accordions";
 
 const Blogs = () => {
   return (
@@ -6,7 +7,11 @@ const Blogs = () => {
       <Helmet>
         <title> Grand Restaurant | Blogs </title>
       </Helmet>
-      Blogs
+      <div>
+        <div className="">
+          <Accordions></Accordions>
+        </div>
+      </div>
     </div>
   );
 };

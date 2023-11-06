@@ -7,6 +7,7 @@ import OurBurger from "./OurBurger";
 import Popular from "./Popular";
 import Presentation from "./Presentation";
 import Yourway from "./Yourway";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const sectionTitle = {
@@ -23,6 +24,14 @@ const Home = () => {
         <SectionHeader props={sectionTitle}></SectionHeader>
         <div className="flex flex-col justify-center items-center">
           <Popular></Popular>
+          <div className="mx-auto pb-10">
+            <Link to="menu">
+              <button className="btn btn-outline text-mybrown rounded-md hover:bg-mybrown">
+                {" "}
+                All Food Items{" "}
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
       <div>

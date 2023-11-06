@@ -9,6 +9,7 @@ import Blogs from "../Pages/Blogs/Blogs";
 import FindUs from "../Pages/FindUs/FindUs";
 import LogIn from "../Pages/Admin/LogIn";
 import Register from "../Pages/Admin/Register";
+import Profile from "../Pages/Admin/Profile";
 import HelpCenter from "../Pages/FooterExtra/HelpCenter";
 import OnlineDelivery from "../Pages/FooterExtra/OnlineDelivery";
 import PrivacyPolicy from "../Pages/FooterExtra/PrivacyPolicy";
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
         {
             path:"/terms",
             element:<Terms></Terms> 
+        },
+        {
+            path:"/profile",
+            element: <Profile></Profile>
         }
         
     ]
