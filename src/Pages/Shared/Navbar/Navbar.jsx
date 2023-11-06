@@ -1,17 +1,18 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
  const { users, logOut } = useContext(AuthContext)
+ const navigate = useNavigate()
  
 
  const handleSignOut = () =>{
   logOut().then(()=>{
     toast.success("Logged Out Successfully")
-
+    navigate("/")
   }).catch((error)=>{
     toast.error("Something Wrong", error)
   })

@@ -11,6 +11,12 @@ export default {
         'myblack':'#1c2124',
         'mygreen': '#58b958',
         'myred':'#f03d5b'
+      },
+      fontFamily: {
+        'rubik': ['Rubik', 'sans-serif'],
+        'popins':['Poppins', 'sans-serif'],
+        'kriti' : ['Kristi', 'cursive'],
+        'pacifico':['Pacifico', 'cursive']
       }
     },
   },

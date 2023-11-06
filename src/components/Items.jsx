@@ -9,7 +9,7 @@ const Items = () => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-mybrown"> Beef Burger </h2>
+        <h2 className="card-title font-rubik text-mybrown"> Beef Burger </h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, odio.</p>
         <div className="card-actions justify-end">
           <button className="btn btn-outline text-mybrown rounded-sm btn-sm">Buy Now</button>
