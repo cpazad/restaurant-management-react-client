@@ -2,12 +2,19 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
- const { users, logOut }= useContext(AuthContext)
+ const { users, logOut } = useContext(AuthContext)
+ 
 
  const handleSignOut = () =>{
-  logOut().then().catch()
+  logOut().then(()=>{
+    toast.success("Logged Out Successfully")
+
+  }).catch((error)=>{
+    toast.error("Something Wrong", error)
+  })
  }
  
  
@@ -115,7 +122,7 @@ const Navbar = () => {
           
           <button onClick={handleSignOut} className="btn btn-sm btn-outline rounded-sm hover:bg-mybrown hover:text-black text-mybrown">
             {" "}
-            Log In{" "}
+            Log Out {" "}
           </button>
         ) : ( <Link to="/login">
           {" "}

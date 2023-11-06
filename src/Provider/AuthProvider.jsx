@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
   };
   // SignOut function
 
-  const LogOut = () => {
+  const logOut = () => {
     setIsLoading(true);
     return signOut(auth);
   };
@@ -97,7 +97,7 @@ const AuthProvider = ({ children }) => {
     isLoading,
     createUser,
     signIn,
-    LogOut,
+    logOut,
     handleUpdateProfile,
     signInWithGoogle,
     signInWithGitHub,
