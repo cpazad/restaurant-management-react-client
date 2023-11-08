@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="mt-auto">
         {/* Top Footer */}
-      <footer className="footer p-10 bg-[#efefef] text-base-content">
+      <footer className="footer place-items-center sm:place-items-start  p-10 bg-[#efefef] text-base-content">
         <aside>
           <div className="flex flex-col  gap-4 justify-center items-center">
             <img src="/restaurant-64.png" alt="" />

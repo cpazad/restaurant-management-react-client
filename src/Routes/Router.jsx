@@ -14,6 +14,7 @@ import HelpCenter from "../Pages/FooterExtra/HelpCenter";
 import OnlineDelivery from "../Pages/FooterExtra/OnlineDelivery";
 import PrivacyPolicy from "../Pages/FooterExtra/PrivacyPolicy";
 import Terms from "../Pages/FooterExtra/Terms";
+import ProductDetails from "../Pages/Dynamic/Product/ProductDetails";
 
 const router = createBrowserRouter([
    {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
         {
             path:"/profile",
             element: <Profile></Profile>
+        },
+        {
+            path:"/foods/:id",
+            element:<ProductDetails></ProductDetails>
         }
         
     ]

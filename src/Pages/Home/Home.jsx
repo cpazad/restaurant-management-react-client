@@ -26,7 +26,7 @@ const Home = () => {
           <Popular></Popular>
           <div className="mx-auto pb-10">
             <Link to="menu">
-              <button className="btn btn-outline text-mybrown rounded-md hover:bg-mybrown">
+              <button className="btn bg-mybrown btn-outline rounded-sm hover:bg-mybrown">
                 {" "}
                 All Food Items{" "}
               </button>

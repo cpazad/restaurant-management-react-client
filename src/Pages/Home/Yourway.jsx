@@ -9,7 +9,7 @@ const Yourway = () => {
   return (
     <div>
       <SectionHeader props={sectionTitle}></SectionHeader>
-      <div className="flex justify-center items-center px-20 py-10">
+      <div className="flex flex-col sm:flex-row justify-center items-center px-5 sm:px-20 py-10">
         <div className=" w-full sm:w-1/3">
           <img className="h-[90%]"  src={deli} alt="" />
         </div>

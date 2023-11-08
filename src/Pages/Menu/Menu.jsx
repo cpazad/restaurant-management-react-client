@@ -1,6 +1,6 @@
-import { Helmet } from "react-helmet-async"
-import Popular from "../Home/Popular"
+import { Helmet } from "react-helmet-async";
 
+import Populars from "../Home/Populars";
 
 const Menu = () => {
   return (
@@ -9,10 +9,10 @@ const Menu = () => {
         <title> Grand Restaurant | Menu </title>
       </Helmet>
       <div className="flex flex-col justify-center items-center">
-        <Popular></Popular>
+        <Populars></Populars>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
