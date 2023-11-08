@@ -24,7 +24,7 @@ const FindUs = () => {
                 <img src="" alt="" />
               </div>
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-lg shadow-neutral-700/40 bg-neutral-800">
+            <div className="card flex-shrink-0 w-full rounded-sm max-w-sm shadow-lg shadow-mybrown/30 bg-neutral-800">
               <form className="card-body ">
                 <div className="form-control">
                   <label className="label">

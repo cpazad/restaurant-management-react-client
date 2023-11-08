@@ -98,7 +98,7 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-white ">{navlinks}</ul>
       </div>
-      <div className="navbar-end">
+      {/* <div className="navbar-end">
         {users && (
           <>
             <div className="flex justify-center items-center">
@@ -136,6 +136,53 @@ const Navbar = () => {
             <button className="btn btn-sm btn-outline rounded-sm hover:bg-mybrown hover:text-black text-mybrown">
               {" "}
               Log In{" "}
+            </button>
+          </Link>
+        )}
+      </div> */}
+      <div className="navbar-end">
+        {users?.email ? (
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src={users.photoURL} alt={users.displayName} />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100  w-48 rounded-sm"
+            >
+              <li>
+                <p className="text-mybrown text-sm text-center">
+                  Welcome! {users.displayName}
+                </p>
+              </li>
+              <li>
+                <Link to="/profile">My Profile</Link>
+              </li>
+              <li title="My added Foods, can update and delete food here">
+                <Link to="/profile/myfoods"> My Foods </Link>
+              </li>
+              <li>
+                <Link to="/profile/addfood"> Add Food Form </Link>
+              </li>
+              <li>
+                <Link to="/profile/mycart"> My Cart <FaCartArrowDown></FaCartArrowDown> </Link>
+              </li>
+              <li>
+                <button
+                  className="btn btn-sm bg-mybrown  btn-ghost"
+                  onClick={handleSignOut}
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link to="/login">
+            <button className="btn btn-sm btn-outline rounded-sm hover:bg-mybrown hover:text-black text-mybrown">
+              Login
             </button>
           </Link>
         )}

@@ -45,16 +45,16 @@ const Populars = () => {
           Search your desired food by Name{" "}
         </h2>
         <input
-          className="input input-bordered"
+          className="input input-bordered rounded-sm"
           type="text"
-          placeholder="Star typing food name "
+          placeholder="Start typing food name"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto pb-5">
         {filteredfoods.map((food) => (
-          <Items key={food.id} food={food}></Items>
+          <Items key={food._id} food={food}></Items>
         ))}
       </div>
       <div className="flex justify-between py-10">

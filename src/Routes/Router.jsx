@@ -15,6 +15,10 @@ import OnlineDelivery from "../Pages/FooterExtra/OnlineDelivery";
 import PrivacyPolicy from "../Pages/FooterExtra/PrivacyPolicy";
 import Terms from "../Pages/FooterExtra/Terms";
 import ProductDetails from "../Pages/Dynamic/Product/ProductDetails";
+import MyFoods from "../Pages/Dynamic/User/MyFoods";
+import MyCart from "../Pages/Dynamic/User/MyCart";
+import AddFood from "../Pages/Dynamic/User/AddFood";
+import UpdateFood from "../Pages/Dynamic/User/UpdateFood";
 
 const router = createBrowserRouter([
    {
@@ -72,11 +76,31 @@ const router = createBrowserRouter([
         },
         {
             path:"/profile",
-            element: <Profile></Profile>
+            element: <Profile></Profile>,
+            children:[
+                {
+                    path:"/profile/myfoods",
+                    element:<MyFoods></MyFoods>
+                },
+                {
+                    path:"/profile/mycart",
+                    element:<MyCart></MyCart>
+                },
+                {
+                    path:"/profile/addfood",
+                    element:<AddFood></AddFood>
+                },
+                {
+                    path:"/profile/updatefood",
+                    element:<UpdateFood></UpdateFood>
+                }
+            ]
         },
         {
             path:"/foods/:id",
-            element:<ProductDetails></ProductDetails>
+            element:<ProductDetails></ProductDetails>,
+            // loader: ({params})=> fetch(`http://localhost:5000/foods/${params.id}`)
+            loader: (object)=> fetch(`http://localhost:5000/foods/${object.params.id}`)
         }
         
     ]
