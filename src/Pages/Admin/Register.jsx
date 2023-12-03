@@ -1,15 +1,21 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./login.css";
 import { FaUser, FaLock, FaEnvelope, FaImage } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser, handleUpdateProfile } = useContext(AuthContext);
-  console.log(createUser, handleUpdateProfile);
-  const navigate = useLocation();
+  const axiosPublic = useAxiosPublic();
+ // console.log(createUser, handleUpdateProfile);
+  const location = useLocation();
+  const navigate = useNavigate()
+
+
   const HandleRegistration = (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -32,6 +38,25 @@ const Register = () => {
         .then((result) => {
           handleUpdateProfile(name, photo).then(() => {
             console.log(result.user);
+            const userInfo = {
+              name,
+              email,
+              photo,
+            };
+            axiosPublic.post("/users", userInfo).then((res) => {
+              if (res.data.insertedId) {
+                console.log("user info sent database");
+
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "User created successfully.",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                // navigate("/");
+              }
+            });
             toast.success("Hey!! Registration Successful");
             navigate(location?.state ? location.state : "/");
           });

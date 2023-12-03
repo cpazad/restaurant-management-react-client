@@ -19,6 +19,7 @@ import MyFoods from "../Pages/Dynamic/User/MyFoods";
 import MyCart from "../Pages/Dynamic/User/MyCart";
 import AddFood from "../Pages/Dynamic/User/AddFood";
 import UpdateFood from "../Pages/Dynamic/User/UpdateFood";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
    {
@@ -37,6 +38,12 @@ const router = createBrowserRouter([
         {
             path:"/menu",
             element:<Menu></Menu>
+        },
+        {
+            path:"menu/:id",
+            element:<ProductDetails></ProductDetails>,
+            loader: ({params})=> fetch(`http://localhost:5000/menu/${params.id}`)
+           
         },
         {
             path:"/gallery",
@@ -76,32 +83,33 @@ const router = createBrowserRouter([
         },
         {
             path:"/profile",
-            element: <Profile></Profile>,
+            element: <PrivateRoute><Profile></Profile></PrivateRoute> ,
             children:[
                 {
                     path:"/profile/myfoods",
-                    element:<MyFoods></MyFoods>
+                    element:<PrivateRoute><MyFoods></MyFoods></PrivateRoute>
                 },
                 {
                     path:"/profile/mycart",
-                    element:<MyCart></MyCart>
+                    element:<PrivateRoute><MyCart></MyCart></PrivateRoute>
                 },
                 {
-                    path:"/profile/addfood",
-                    element:<AddFood></AddFood>
+                    path:"addfood",
+                    element:<PrivateRoute><AddFood></AddFood></PrivateRoute>
                 },
                 {
-                    path:"/profile/updatefood",
-                    element:<UpdateFood></UpdateFood>
+                    path:"updatefood/:id",
+                    element: <PrivateRoute><UpdateFood></UpdateFood></PrivateRoute>,
+                    loader:({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
                 }
             ]
-        },
-        {
-            path:"/foods/:id",
-            element:<ProductDetails></ProductDetails>,
-            // loader: ({params})=> fetch(`http://localhost:5000/foods/${params.id}`)
-            loader: (object)=> fetch(`http://localhost:5000/foods/${object.params.id}`)
         }
+        // {
+        //     path:"/foods/:id",
+        //     element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
+        //     // loader: ({params})=> fetch(`http://localhost:5000/foods/${params.id}`)
+        //     loader: (object)=> fetch(`http://localhost:5000/foods/${object.params.id}`)
+        // }
         
     ]
    } 

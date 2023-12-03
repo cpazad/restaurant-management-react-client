@@ -18,7 +18,7 @@ const Item = ({food}) => {
       <p className="text-left text-stone-300 pl-1"> Price:$15 </p>
       <p className="text-left text-stone-300 pl-1"> Orders: {orders} </p>
       <div className="card-actions justify-end">
-      <Link to={`/foods/${_id}`}><button className="btn btn-outline text-mybrown rounded-sm btn-sm">Details </button></Link>
+      <Link to={`/menu/${_id}`}><button className="btn btn-outline text-mybrown rounded-sm btn-sm">Details </button></Link>
       </div>
     </div>
   </div>

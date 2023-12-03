@@ -31,7 +31,7 @@ const Gallery = () => {
             onInit={onInit}
             speed={500}
             plugins={[lgThumbnail, lgZoom]}
-            elementClassNames="grid grid-cols-4 gap-4 p-10"
+            elementClassNames="grid grid-cols-1 sl:grid-cols-2 lg:grid-cols-4 gap-4 p-10"
           >
             <a href={img1}>
               <img alt="Boss" src={img1} />

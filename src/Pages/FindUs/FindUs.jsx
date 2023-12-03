@@ -9,9 +9,9 @@ const FindUs = () => {
 
       {/* Main Section */}
       <div>
-        <div className="hero min-h-screen px-32">
+        <div className="hero min-h-screen sm:px-32">
           <div className="hero-content flex-col lg:flex-row-reverse">
-            <div className="text-center text-stone-100 lg:text-left p-10">
+            <div className="text-center text-stone-100 lg:text-left sm:p-10">
               <h1 className="text-3xl font-bold">Find Us !</h1>
               <p className="py-6">
                 Provident cupiditate voluptatem et in. Quaerat fugiat ut

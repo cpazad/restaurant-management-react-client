@@ -64,7 +64,7 @@ const Navbar = () => {
     <div className="navbar bg-myblack shadow-lg">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden text-stone-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"

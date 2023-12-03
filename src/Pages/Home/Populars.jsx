@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Items from "../../components/Items";
+import localData from '/public/foods.json';
 
 const Populars = () => {
   const [foods, setFoods] = useState([]);
@@ -7,12 +8,46 @@ const Populars = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
 
+  // useEffect(() => {
+  //   // fetch("http://localhost:5000/foods")
+  //   fetch("https://restaurant-management-server-j6y0ib2bo-azadur-rahmans-projects.vercel.app/foods", {
+  //     method:"GET",
+  //     mode:'no-cors'
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setFoods(data);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch("http://localhost:5000/foods")
-      .then((res) => res.json())
-      .then((data) => {
-        setFoods(data);
-      });
+    const fetchData = async () => {
+      try {
+        // Attempt to fetch data from the server
+        const response = await fetch('https://restaurant-management-server-omega.vercel.app/foods');
+        const serverData = await response.json();
+
+        // Check if serverData is empty or undefined
+        if (!serverData || serverData.length === 0) {
+          // Use local data if server data is not available
+          console.log('Using local data:', localData);
+          setFoods(localData); // Set localData to the state
+        } else {
+          // Use server data if available
+          console.log('Using server data:', serverData);
+          setFoods(serverData); // Set serverData to the state
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+
+        // If there is an error, use local data as a fallback
+        console.log('Using local data as a fallback:', localData);
+        setFoods(localData); // Set localData to the state as a fallback
+      }
+    };
+
+    // Call the fetchData function when the component mounts
+    fetchData();
   }, []);
 
   const totalProducts = foods.filter((food) =>

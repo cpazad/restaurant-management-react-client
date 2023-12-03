@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import PropTypes from 'prop-types'
 // import img1 from "../../src/assets/images/beef-burger.png"
 
-const Items = ({food}) => {
-  const {_id,strMeal,price,strMealThumb,strCategory  } = food
+const Items = ({item}) => {
+  const {_id,strMeal,price,strMealThumb,strCategory  } = item
   return (
     <div className="card w-80 bg-neutral-800  shadow-xl rounded-sm">
       <figure className="px-10 pt-10">
@@ -17,7 +17,7 @@ const Items = ({food}) => {
         <p className="text-left text-stone-300 pl-1"> Category: {strCategory} </p>
         <p className="text-left text-stone-300 pl-1"> Price:${price} </p>
         <div className="card-actions justify-end">
-          <Link to={`/foods/${_id}`}><button className="btn btn-outline text-mybrown rounded-sm btn-sm">Details </button></Link>
+          <Link to={`/menu/${_id}`}><button className="btn btn-outline text-mybrown rounded-sm btn-sm">Details </button></Link>
           
         </div>
       </div>
@@ -28,7 +28,7 @@ const Items = ({food}) => {
 export default Items;
 
 Items.propTypes = {
-  food: PropTypes.shape({
+  item: PropTypes.shape({
     _id: PropTypes.string.isRequired,
     strMeal: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,

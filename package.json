@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.12.2",
+    "axios": "^1.6.2",
     "firebase": "^10.5.2",
     "lightgallery": "^2.7.2",
     "localforage": "^1.10.0",
@@ -24,7 +26,8 @@
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.16.0",
     "reactstrap": "^9.2.0",
-    "sort-by": "^0.0.2"
+    "sort-by": "^0.0.2",
+    "sweetalert2": "^11.10.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
